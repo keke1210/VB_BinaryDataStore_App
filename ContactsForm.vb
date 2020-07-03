@@ -76,31 +76,33 @@ Public Class ContactsForm
         Try
             newData = DataGridView1.Rows(_index)
 
-            If (newData Is Nothing Or
-            newData.Cells Is Nothing Or
-            newData.Cells(0).Value Is Nothing Or
-            newData.Cells(0).Value.ToString().IsNotEmpty() <> True) Then
-            End If
+            Dim checkForFailure = newData Is Nothing Or
+                                  newData.Cells Is Nothing Or
+                                  newData.Cells(0).Value Is Nothing Or
+                                  newData.Cells(0).Value.ToString().IsNotEmpty() <> True
         Catch ex As Exception
             MessageBox.Show("Row cannot be edited", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
         End Try
 
-        Dim contactModel As New Contact() With
-        {
-            .Name = txtName.Text,
-            .PhoneNumber = txtPhoneNumber.Text
-        }
+        If (txtName.Text.IsNotEmpty And txtPhoneNumber.Text.IsNotEmpty) Then
+            Dim contactModel As New Contact() With
+            {
+                .Name = txtName.Text,
+                .PhoneNumber = txtPhoneNumber.Text
+            }
 
-        newData.Cells(1).Value = contactModel.Name
-        newData.Cells(2).Value = contactModel.PhoneNumber
+            newData.Cells(1).Value = contactModel.Name
+            newData.Cells(2).Value = contactModel.PhoneNumber
 
-        Dim contactId = newData.Cells(0).Value.ToString()
+            Dim contactId = newData.Cells(0).Value.ToString()
 
-        _dataStore.EditContact(contactId, contactModel)
-        _dataStore.Save()
+            _dataStore.EditContact(contactId, contactModel)
+            _dataStore.Save()
 
-        ClearContactsData()
+            ClearContactsData()
+        End If
+
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click

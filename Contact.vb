@@ -1,6 +1,7 @@
 ﻿Imports KekeDataStore.Binary
 
 Namespace Models
+
     <Serializable()>
     Public Class Contact : Implements IBaseEntity
         Private _Id As Guid
