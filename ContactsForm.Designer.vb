@@ -29,7 +29,7 @@ Partial Class ContactsForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -102,17 +102,17 @@ Partial Class ContactsForm
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = False
         '
-        'btnCancel
+        'btnClear
         '
-        Me.btnCancel.BackColor = System.Drawing.Color.MediumSlateBlue
-        Me.btnCancel.FlatAppearance.BorderSize = 0
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Location = New System.Drawing.Point(297, 332)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 32)
-        Me.btnCancel.TabIndex = 10
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.MediumSlateBlue
+        Me.btnClear.FlatAppearance.BorderSize = 0
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClear.Location = New System.Drawing.Point(297, 332)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 32)
+        Me.btnClear.TabIndex = 10
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'DataGridView1
         '
@@ -127,7 +127,7 @@ Partial Class ContactsForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(863, 397)
-        Me.Controls.Add(Me.btnCancel)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtPhoneNumber)
@@ -150,6 +150,6 @@ Partial Class ContactsForm
     Friend WithEvents Label3 As Label
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
-    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents DataGridView1 As DataGridView
 End Class

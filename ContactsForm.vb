@@ -23,11 +23,7 @@ Public Class ContactsForm
 #Region "Events"
 
     Private Sub ContactsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        _table.Columns.Add("ID", Type.GetType("System.String"))
-        _table.Columns.Add("Name", Type.GetType("System.String"))
-        _table.Columns.Add("Phone Number", Type.GetType("System.String"))
-        DataGridView1.DataSource = _table
-
+        InitializeTable()
         BindGridView()
     End Sub
 
@@ -48,21 +44,25 @@ Public Class ContactsForm
 
         ' Iterate through all the selected rows
         For Each row As DataGridViewRow In DataGridView1.SelectedRows
-            Dim idToBeDeleted = row.Cells(0).Value
-
-            DataGridView1.Rows.Remove(row)
-
-            _dataStore.DeleteContact(idToBeDeleted)
-            ClearContactsData()
+            If (row.Cells(0).Value IsNot Nothing) Then
+                Dim idToBeDeleted = row.Cells(0).Value
+                DataGridView1.Rows.Remove(row)
+                _dataStore.DeleteContact(idToBeDeleted)
+                ClearContactsData()
+            End If
         Next
 
         _dataStore.Save()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim selectedRow As DataGridViewRow
+
         _index = e.RowIndex
 
-        Dim selectedRow As DataGridViewRow
+        If (_index < 0) Then
+            Return
+        End If
 
         selectedRow = DataGridView1.Rows(_index)
 
@@ -73,9 +73,9 @@ Public Class ContactsForm
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Dim newData As DataGridViewRow
 
-        newData = DataGridView1.Rows(_index)
-
         Try
+            newData = DataGridView1.Rows(_index)
+
             If (newData Is Nothing Or
             newData.Cells Is Nothing Or
             newData.Cells(0).Value Is Nothing Or
@@ -99,6 +99,11 @@ Public Class ContactsForm
 
         _dataStore.EditContact(contactId, contactModel)
         _dataStore.Save()
+
+        ClearContactsData()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         ClearContactsData()
     End Sub
 
@@ -114,6 +119,14 @@ Public Class ContactsForm
             _table.Rows.Add(item.Id.ToString(), item.Name, item.PhoneNumber)
         Next
 
+        DataGridView1.DataSource = _table
+    End Sub
+
+    Private Sub InitializeTable()
+        _table.Columns.Add("ID", Type.GetType("System.String"))
+        _table.Columns.Add("Name", Type.GetType("System.String"))
+        _table.Columns.Add("Phone Number", Type.GetType("System.String"))
+        DataGridView1.ReadOnly = True
         DataGridView1.DataSource = _table
     End Sub
 
