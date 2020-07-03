@@ -4,9 +4,6 @@ Namespace Models
     <Serializable()>
     Public Class Contact : Implements IBaseEntity
         Private _Id As Guid
-        Public Sub New()
-            _Id = Guid.NewGuid()
-        End Sub
 
         Public Property Id As Guid Implements IBaseEntity.Id
             Get

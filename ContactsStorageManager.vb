@@ -8,17 +8,16 @@ Namespace MyDataStorage
         Public Sub CreateContact(ByVal name As String, ByVal phonenumber As String)
             Dim contact As New Contact() With
             {
+                .Id = Guid.NewGuid(),
                 .Name = name,
                 .PhoneNumber = phonenumber
             }
 
             _dataStore.Create(contact)
-            _dataStore.SaveChanges()
         End Sub
 
         Public Sub TruncateContacts()
             _dataStore.Truncate()
-            _dataStore.SaveChanges()
         End Sub
 
         Public Function GetContacts() As IEnumerable(Of Contact)
@@ -27,11 +26,13 @@ Namespace MyDataStorage
 
         Public Sub EditContact(ByVal id As String, ByVal obj As Contact)
             _dataStore.Update(id, obj)
-            _dataStore.SaveChanges()
         End Sub
 
         Public Sub DeleteContact(ByVal id As String)
             _dataStore.Delete(id)
+        End Sub
+
+        Public Sub Save()
             _dataStore.SaveChanges()
         End Sub
 

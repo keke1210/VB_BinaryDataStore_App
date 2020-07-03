@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ContactsForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ContactsForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.txtName = New System.Windows.Forms.TextBox()
@@ -31,9 +31,6 @@ Partial Class ContactsForm
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Col_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Col_PhoneNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,7 +39,7 @@ Partial Class ContactsForm
         Me.btnAdd.BackColor = System.Drawing.Color.OliveDrab
         Me.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.Location = New System.Drawing.Point(54, 241)
+        Me.btnAdd.Location = New System.Drawing.Point(54, 332)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 32)
         Me.btnAdd.TabIndex = 1
@@ -61,9 +58,9 @@ Partial Class ContactsForm
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(82, 34)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(78, 13)
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Contact Name:"
+        Me.Label2.Text = "Name:"
         '
         'txtPhoneNumber
         '
@@ -77,16 +74,16 @@ Partial Class ContactsForm
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(42, 57)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 13)
+        Me.Label3.Size = New System.Drawing.Size(78, 13)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Contact PhoneNumber:"
+        Me.Label3.Text = "PhoneNumber:"
         '
         'btnDelete
         '
         Me.btnDelete.BackColor = System.Drawing.Color.IndianRed
         Me.btnDelete.FlatAppearance.BorderSize = 0
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.Location = New System.Drawing.Point(135, 241)
+        Me.btnDelete.Location = New System.Drawing.Point(135, 332)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 32)
         Me.btnDelete.TabIndex = 8
@@ -98,7 +95,7 @@ Partial Class ContactsForm
         Me.btnEdit.BackColor = System.Drawing.Color.DodgerBlue
         Me.btnEdit.FlatAppearance.BorderSize = 0
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEdit.Location = New System.Drawing.Point(216, 241)
+        Me.btnEdit.Location = New System.Drawing.Point(216, 332)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(75, 32)
         Me.btnEdit.TabIndex = 9
@@ -110,7 +107,7 @@ Partial Class ContactsForm
         Me.btnCancel.BackColor = System.Drawing.Color.MediumSlateBlue
         Me.btnCancel.FlatAppearance.BorderSize = 0
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCancel.Location = New System.Drawing.Point(297, 241)
+        Me.btnCancel.Location = New System.Drawing.Point(297, 332)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 32)
         Me.btnCancel.TabIndex = 10
@@ -120,34 +117,16 @@ Partial Class ContactsForm
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Col_ID, Me.Col_Name, Me.Col_PhoneNumber})
         Me.DataGridView1.Location = New System.Drawing.Point(400, 31)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(344, 242)
+        Me.DataGridView1.Size = New System.Drawing.Size(428, 333)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Col_ID
-        '
-        Me.Col_ID.Frozen = True
-        Me.Col_ID.HeaderText = "ID"
-        Me.Col_ID.Name = "Col_ID"
-        Me.Col_ID.ReadOnly = True
-        '
-        'Col_Name
-        '
-        Me.Col_Name.HeaderText = "Name"
-        Me.Col_Name.Name = "Col_Name"
-        '
-        'Col_PhoneNumber
-        '
-        Me.Col_PhoneNumber.HeaderText = "Phone Number"
-        Me.Col_PhoneNumber.Name = "Col_PhoneNumber"
         '
         'ContactsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(785, 325)
+        Me.ClientSize = New System.Drawing.Size(863, 397)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnDelete)
@@ -173,7 +152,4 @@ Partial Class ContactsForm
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Col_ID As DataGridViewTextBoxColumn
-    Friend WithEvents Col_Name As DataGridViewTextBoxColumn
-    Friend WithEvents Col_PhoneNumber As DataGridViewTextBoxColumn
 End Class
